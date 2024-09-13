@@ -13,8 +13,8 @@ class Post(models.Model):
     user = models.ForeignKey(SocialUser ,on_delete=models.PROTECT)
     text = models.TextField()
     pic = models.ImageField(blank= True , null=True)
-    likers = models.ManyToManyField(SocialUser)
-    comment = models.ManyToManyField(Comment)
+    likers = models.ManyToManyField(SocialUser , related_name="liker")
+    comment = models.ManyToManyField(Comment , related_name="com")
 
 
 
